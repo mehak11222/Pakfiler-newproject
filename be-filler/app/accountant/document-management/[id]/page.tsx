@@ -15,7 +15,7 @@ import {
 import { useToast } from "../../../../components/ui/use-toast";
 import { ArrowLeft } from "lucide-react";
 import Cookies from "js-cookie";
-import { getCurrentUser } from "@/lib/auth";
+import { getCurrentUser } from "../../../../lib/auth";
 import Unauthorized from "../../../../components/Unauthorized";
 
 export default function DocumentDetail() {
