@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, InternalAxiosRequestConfig, AxiosResponse } from "axios";
 import AuthService from "@/auth/auth.service";
-
+import { useEffect } from "react";
 const auth: AuthService = new AuthService();
 
 const getBearerToken = (): string | undefined => {
@@ -8,22 +8,35 @@ const getBearerToken = (): string | undefined => {
 };
 
 const handleError = (error: any): Promise<never> => {
-  if (
+   if (
     error.message === "Request failed with status code 403" ||
     error.response?.data === "Invalid Token"
   ) {
     auth.clearToken();
-    window.location.href = "/auth/login";
+
+    // Client-side redirect only
+    if (typeof window !== "undefined") {
+      window.location.href = "/auth/login";
+    }
   }
+
+  // Handle 401 / Unauthorized
   if (
     error.response &&
     (error.response.status === 401 || error.response.statusText === "Unauthorized")
   ) {
     auth.clearToken();
-    // window.location.href = "/auth/login";
+
+    // Client-side redirect only
+    if (typeof window !== "undefined") {
+      window.location.href = "/auth/login";
+    }
   }
 
+  // Log the error
   console.error("An error occurred:", error);
+
+  // Reject promise for Axios
   return Promise.reject(error);
 };
 
