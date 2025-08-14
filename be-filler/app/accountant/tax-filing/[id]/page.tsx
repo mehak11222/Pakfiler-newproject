@@ -3,39 +3,39 @@
 
 import { useState, useEffect, useRef, JSX } from "react"
 import { useRouter, useParams } from "next/navigation"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardHeader, CardTitle } from "../../../../components/ui/card"
+import { Button } from "../../../../components/ui/button"
+import { Input } from "../../../../components/ui/input"
+import { Label } from "../../../../components/ui/label"
 import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "../../../../components/ui/collapsible"
 import {
     Tabs,
     TabsContent,
     TabsList,
     TabsTrigger,
-} from "@/components/ui/tabs"
+} from "../../../../components/ui/tabs"
 import {
     Tooltip,
     TooltipContent,
     TooltipProvider,
     TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "../../../../components/ui/tooltip"
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select"
-import { useToast } from "@/components/ui/use-toast"
+} from "../../../../components/ui/select"
+import { useToast } from "../../../../components/ui/use-toast"
 import { ChevronDown, ChevronUp, Search, Copy, FileText, Download, Save, X } from "lucide-react"
-import { getCurrentUser } from "@/lib/auth"
-import { Badge } from "@/components/ui/badge"
-import Unauthorized from "@/components/Unauthorized"
+import { getCurrentUser } from "../../../../lib/auth"
+import { Badge } from "../../../../components/ui/badge"
+import Unauthorized from "../../../../components/Unauthorized"
 import jsPDF from "jspdf"
 import html2canvas from "html2canvas"
 
