@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../../../components/ui/select";
-import { Input } from "../../../components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
 import Cookies from "js-cookie";
-import { getCurrentUser } from "../../../lib/auth";
-import Unauthorized from "../../../components/Unauthorized";
+import { getCurrentUser } from "@/lib/auth";
+import Unauthorized from "@/components/Unauthorized";
 import { useRouter } from "next/navigation";
-import { Button } from "../../../components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { Label } from "recharts";
 

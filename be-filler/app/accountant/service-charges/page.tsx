@@ -2,16 +2,16 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
-import { Card, CardContent, CardHeader, CardTitle } from "../../../components/ui/card"
-import { Button } from "../../../components/ui/button"
-import { Input } from "../../../components/ui/input"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "../../../components/ui/select"
+} from "@/components/ui/select"
 import {
     Dialog,
     DialogContent,
@@ -19,11 +19,11 @@ import {
     DialogFooter,
     DialogHeader,
     DialogTitle,
-} from "../../../components/ui/dialog"
-import { useToast } from "../../../components/ui/use-toast"
+} from "@/components/ui/dialog"
+import { useToast } from "@/components/ui/use-toast"
 import { DollarSign, Edit, Trash2, X } from "lucide-react"
-import { getCurrentUser } from "../../../lib/auth"
-import Unauthorized from "../../../components/Unauthorized"
+import { getCurrentUser } from "@/lib/auth"
+import Unauthorized from "@/components/Unauthorized"
 import axios from "axios"
 import Cookies from "js-cookie"
 
