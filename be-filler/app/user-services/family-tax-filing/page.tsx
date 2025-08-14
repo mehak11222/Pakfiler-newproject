@@ -34,7 +34,7 @@ const FamilyTaxFiling = () => {
   if (!currentUser) {
     Cookies.remove("user")
     Cookies.remove("token")
-    router.push("/auth/login")
+    router.push("/auth/login");
     return null
   }
 
