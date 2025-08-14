@@ -9,16 +9,16 @@ const getBearerToken = (): string | undefined => {
 
 const handleError = (error: any): Promise<never> => {
    if (
-    error.message === "Request failed with status code 403" ||
-    error.response?.data === "Invalid Token"
-  ) {
-    auth.clearToken();
+  error.message === "Request failed with status code 403" ||
+  error.response?.data === "Invalid Token"
+) {
+  auth.clearToken();
 
-    // Client-side redirect only
-    if (typeof window !== "undefined") {
-      window.location.href = "/auth/login";
-    }
+  // Client-side redirect only
+  if (typeof window !== "undefined") {
+    window.location.href = "/auth/login";
   }
+}
 
   // Handle 401 / Unauthorized
   if (

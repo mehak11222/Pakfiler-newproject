@@ -112,11 +112,15 @@ const Cart: React.FC = () => {
                         </p>
                     </div>
                     <Button
-                        className="bg-gradient-to-r from-[#af0e0e] to-[#8a0b0b] hover:from-[#8a0b0b] hover:to-[#6b0808] text-white px-8 py-3 rounded-full transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#af0e0e] focus:ring-offset-2"
-                        onClick={() => window.location.href = "/services"}
-                    >
-                        Explore Services
-                    </Button>
+  className="bg-gradient-to-r from-[#af0e0e] to-[#8a0b0b] hover:from-[#8a0b0b] hover:to-[#6b0808] text-white px-8 py-3 rounded-full transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#af0e0e] focus:ring-offset-2"
+  onClick={() => {
+    if (typeof window !== "undefined") {
+      window.location.href = "/services";
+    }
+  }}
+>
+  Explore Services
+</Button>
                 </div>
             </div>
         )
