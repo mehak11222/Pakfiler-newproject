@@ -107,23 +107,21 @@ export default function SignupPage() {
     })
 
     if (result.success) {
-  toast({
-    title: "Account Created",
-    description: "Your account has been created successfully. You can now log in.",
-  });
-
-  if (typeof window !== "undefined") {
-    setTimeout(() => {
-      window.location.href = "/auth/login";
-    }, 1500);
+      toast({
+        title: "Account Created",
+        description: "Your account has been created successfully. You can now log in.",
+      })
+      setTimeout(() => {
+        window.location.href = "/auth/login"
+      }, 1500)
+    } else {
+      toast({
+        title: "Error",
+        description: result.message || "Failed to register. Please try again.",
+        variant: "destructive",
+      })
+    }
   }
-} else {
-  toast({
-    title: "Error",
-    description: result.message || "Failed to register. Please try again.",
-    variant: "destructive",
-  });
-}
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 pt-24">
