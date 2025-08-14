@@ -28,6 +28,7 @@
   "author": "PakFiller Team",
   "license": "MIT",
   "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
     "autoprefixer": "^10.4.21",
     "axios": "^1.11.0",
     "chart.js": "^4.5.0",
@@ -39,7 +40,9 @@
     "react": "^19.1.1",
     "react-chartjs-2": "^5.3.0",
     "react-dom": "^19.1.1",
+    "react-hook-form": "^7.62.0",
     "recharts": "^3.1.2",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.12",
+    "zod": "^4.0.17"
   }
 }
