@@ -16,6 +16,7 @@
     "setup": "npm run install:all && echo 'Setup completed! Please configure environment variables.'"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
     "concurrently": "^8.2.2"
   },
   "keywords": [
