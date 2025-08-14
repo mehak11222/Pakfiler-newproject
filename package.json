@@ -28,11 +28,14 @@
   "author": "PakFiller Team",
   "license": "MIT",
   "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.11.0",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.539.0",
     "next": "^15.4.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "recharts": "^3.1.2",
     "tailwindcss": "^4.1.12"
   }
 }
