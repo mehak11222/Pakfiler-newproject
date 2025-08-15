@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import ChatWidget from "@/components/ChatWidget";
-
+import "./styles.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
