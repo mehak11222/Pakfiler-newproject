@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@reference style.css;
 
 body {
   font-family: Arial, Helvetica, sans-serif;
