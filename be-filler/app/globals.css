@@ -126,8 +126,10 @@ svg[data-darkreader-inline-stroke] {
 
 @layer base {
   * {
-    @apply border-border;
+    border-width: 1px;
+    border-color: rgb(var(--border));
   }
+
   body {
     @apply bg-background text-foreground;
   }
