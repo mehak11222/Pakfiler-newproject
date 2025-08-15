@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@reference "./styles.css";
+@reference "/styles.css";
 
 /* Prevent Dark Reader from interfering with hydration */
 [data-darkreader-inline-bgcolor] {

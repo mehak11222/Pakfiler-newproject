@@ -170,7 +170,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="border-t border-border py-6">
+      <div className="border-t border py-6">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Pakfiler. All rights reserved.</p>
