@@ -55,14 +55,17 @@ async function registerUser(data: {
   role: string
 }): Promise<{ success: boolean; message?: string }> {
   try {
-    const response = await axios.post("https://backend-production-5fad.up.railway.app/api/auth/register", {
-      email: data.email,
-      fullName: data.fullName,
-      phone: data.phoneNumber,
-      cnic: data.cnic,
-      password: data.password,
-      role: data.role,
-    })
+    const response = await axios.post(
+      "https://backend-production-5fad.up.railway.app/api/auth/register",
+      {
+        email: data.email,
+        fullName: data.fullName,
+        phone: data.phoneNumber,
+        cnic: data.cnic,
+        password: data.password,
+        role: data.role,
+      }
+    )
     console.log("Register response:", response.data)
     return { success: true, message: response.data.message }
   } catch (error: any) {
@@ -89,10 +92,10 @@ export default function SignupPage() {
       fullName: "",
       phoneNumber: "",
       cnic: "",
-      role: "user",
+      role: "", // force user to actively select
       password: "",
       confirmPassword: "",
-      terms: true,
+      terms: false, // force user to check
     },
   })
 
@@ -110,9 +113,10 @@ export default function SignupPage() {
       toast({
         title: "Account Created",
         description: "Your account has been created successfully. You can now log in.",
+        variant: "default",
       })
       setTimeout(() => {
-        window.location.href = "/auth/login"
+        if (typeof window !== "undefined") window.location.href = "/auth/login"
       }, 1500)
     } else {
       toast({
@@ -124,7 +128,7 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 pt-24">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 pt-24 bg-gray-50">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center space-y-2">
           <Link href="/" className="inline-block">
@@ -141,8 +145,9 @@ export default function SignupPage() {
           <p className="text-sm text-muted-foreground">Sign up to get started with Befiler</p>
         </div>
 
-        <div className="bg-card rounded-lg shadow-md p-6 border">
+        <div className="bg-card rounded-lg shadow-md p-6 border border-gray-200">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            {/* Email */}
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
               <div className="relative">
@@ -158,6 +163,7 @@ export default function SignupPage() {
               {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
             </div>
 
+            {/* Full Name */}
             <div className="space-y-2">
               <Label htmlFor="fullName">Full Name</Label>
               <div className="relative">
@@ -173,6 +179,7 @@ export default function SignupPage() {
               {errors.fullName && <p className="text-sm text-destructive">{errors.fullName.message}</p>}
             </div>
 
+            {/* Phone */}
             <div className="space-y-2">
               <Label htmlFor="phoneNumber">Phone Number</Label>
               <div className="relative">
@@ -190,6 +197,7 @@ export default function SignupPage() {
               )}
             </div>
 
+            {/* CNIC */}
             <div className="space-y-2">
               <Label htmlFor="cnic">CNIC</Label>
               <div className="relative">
@@ -205,6 +213,7 @@ export default function SignupPage() {
               {errors.cnic && <p className="text-sm text-destructive">{errors.cnic.message}</p>}
             </div>
 
+            {/* Role */}
             <div className="space-y-2">
               <Label htmlFor="role">Select Role</Label>
               <select
@@ -220,6 +229,7 @@ export default function SignupPage() {
               {errors.role && <p className="text-sm text-destructive">{errors.role.message}</p>}
             </div>
 
+            {/* Password */}
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
               <div className="relative">
@@ -235,6 +245,7 @@ export default function SignupPage() {
               {errors.password && <p className="text-sm text-destructive">{errors.password.message}</p>}
             </div>
 
+            {/* Confirm Password */}
             <div className="space-y-2">
               <Label htmlFor="confirmPassword">Confirm Password</Label>
               <div className="relative">
@@ -252,6 +263,7 @@ export default function SignupPage() {
               )}
             </div>
 
+            {/* Terms */}
             <div className="flex items-start space-x-2">
               <input
                 type="checkbox"
