@@ -93,9 +93,16 @@ export default function TaxFilingDetailsPage() {
             <div className="container px-4 mx-auto py-8 mt-16 text-center text-red-500">
                 <p>{error}</p>
                 <div className="mt-4 space-x-4">
-                    <Button onClick={() => window.location.reload()} className="bg-[#af0e0e] hover:bg-[#8a0b0b]">
-                        Retry
-                    </Button>
+                    <Button
+  onClick={() => {
+    if (typeof window !== "undefined") {
+      window.location.reload();
+    }
+  }}
+  className="mt-4"
+>
+  Retry
+</Button>
                     <Link href="/tax-returns">
                         <Button variant="outline" className="border-[#af0e0e] text-[#af0e0e] hover:bg-[#af0e0e] hover:text-white">
                             Back to Tax Returns

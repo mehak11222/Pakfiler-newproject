@@ -252,7 +252,16 @@ export default function TaxReturnsPage() {
         return (
             <div className="text-center py-8 text-red-500">
                 <p>{error}</p>
-                <Button onClick={() => window.location.reload()} className="mt-4">Retry</Button>
+                <Button
+  onClick={() => {
+    if (typeof window !== "undefined") {
+      window.location.reload();
+    }
+  }}
+  className="mt-4"
+>
+  Retry
+</Button>
             </div>
         )
     }

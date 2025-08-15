@@ -181,7 +181,16 @@ export default function WealthStatementsPage() {
             <div className="text-center py-8 text-red-500">
                 <p>{error}</p>
                 <div className="mt-4 space-x-4">
-                    <Button onClick={() => window.location.reload()}>Retry</Button>
+                    <Button
+  onClick={() => {
+    if (typeof window !== "undefined") {
+      window.location.reload();
+    }
+  }}
+  className="mt-4"
+>
+  Retry
+</Button>
                     <Button
                         onClick={() => setIsUploadModalOpen(true)}
                         variant="outline"
